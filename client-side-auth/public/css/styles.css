@@ -1,0 +1,77 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --card: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --line: #374151;
+  --accent: #93c5fd;
+  --bad: #fca5a5;
+  --ok: #86efac;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1e3a8a 0, var(--bg) 42%);
+  color: var(--text);
+  min-height: 100vh;
+}
+main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.card {
+  background: rgba(17, 24, 39, .9);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px;
+  margin: 18px 0;
+}
+.badge {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn.secondary { background: #374151; }
+pre {
+  overflow: auto;
+  background: #020617;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+code { color: #bfdbfe; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+.student {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+}
+.error { color: var(--bad); }
+.ok { color: var(--ok); }
+.muted { color: var(--muted); }
+nav a {
+  color: var(--accent);
+  margin-right: 14px;
+}

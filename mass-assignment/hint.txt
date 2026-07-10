@@ -1,0 +1,8 @@
+Hint 1:
+A tela de Settings mostra menos campos do que o objeto completo retornado pela API.
+
+Hint 2:
+Compare a request que a UI envia ao salvar perfil com o JSON retornado por /api/v1/me.
+
+Hint 3:
+O bug não está em trocar URL. Está em mandar campos a mais dentro do JSON.

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recruiter Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="/">Public</a>
+      <a href="/recruiter.html">Recruiter</a>
+      <a href="/audit.html">Audit</a>
+    </nav>
+    <span class="badge">Private route</span>
+    <h1>Recruiter dashboard</h1>
+    <section id="auth-status" class="card">Booting recruiter portal...</section>
+    <section id="students" class="grid"></section>
+  </main>
+
+  <script src="/js/config.chunk.js"></script>
+  <script src="/js/msal-bundle.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth-context.js"></script>
+  <script>
+    bootRecruiterPortal();
+  </script>
+</body>
+</html>

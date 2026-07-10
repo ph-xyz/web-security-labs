@@ -1,0 +1,15 @@
+{
+  "name": "taskflow-mail-html-injection-lab",
+  "version": "1.0.0",
+  "description": "Localhost lab for Mail HTML Injection through mention notification emails.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "escape-html": "^1.0.3",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13"
+  }
+}
