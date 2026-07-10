@@ -1,0 +1,11 @@
+{
+  "name": "client-side-auth-lab",
+  "version": "1.0.0",
+  "description": "Medium client-side auth / MSAL-style lab for authorized local training.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
