@@ -1,8 +1,13 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 from ldap3 import Server, Connection
 from ldap3.utils.conv import escape_filter_chars
 
 app = Flask(__name__)
+
+
+@app.get("/")
+def index():
+    return render_template("login.html")
 
 
 @app.post("/login")
@@ -36,9 +41,17 @@ def login():
     )
 
     if conn.entries:
-        return f"Login successful: {conn.entries[0].uid}", 200
+        return render_template(
+            "login.html",
+            message=f"Login successful: {conn.entries[0].uid}",
+            success=True
+        ), 200
 
-    return "Invalid credentials", 401
+    return render_template(
+        "login.html",
+        message="Invalid credentials",
+        success=False
+    ), 401
 
 
 if __name__ == "__main__":
