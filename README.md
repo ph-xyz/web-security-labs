@@ -8,6 +8,7 @@ The lab applications were generated with AI and reviewed and tested by me for st
 
 - `authorization-testing` — horizontal and vertical authorization testing with cookies, bearer tokens and multiple roles.
 - `client-side-auth` — client-side authentication trust and missing token validation.
+- `ldap-injection` — LDAP filter injection and authentication bypass using unescaped input.
 - `mail-html-injection` — HTML injection in transactional email notifications.
 - `mass-assignment` — overposting in account and workspace updates.
 - `session-puzzling` — session state reused across unrelated application flows.
