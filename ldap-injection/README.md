@@ -1,8 +1,8 @@
 # LDAP Injection Lab
 
-Small Flask and OpenLDAP lab created to practice LDAP injection.
+Small Flask and OpenLDAP lab created to practice LDAP injection through a login page.
 
-The login endpoint inserts user input directly into an LDAP filter and prints the resulting filter in the application logs. This project is intentionally vulnerable and should only be used locally.
+The application inserts form input directly into an LDAP filter and prints the resulting filter in the logs. It is intentionally vulnerable and should only be used locally.
 
 ## Run
 
@@ -10,24 +10,22 @@ The login endpoint inserts user input directly into an LDAP filter and prints th
 docker compose up --build
 ```
 
-The application will be available at `http://localhost:5000`.
+Open `http://localhost:5000`.
 
 ## Tests
 
 Valid login:
 
-```bash
-curl -i -X POST http://localhost:5000/login \
-  -d "username=alice" \
-  -d "password=wonderland123"
+```text
+Username: alice
+Password: wonderland123
 ```
 
 Authentication bypass:
 
-```bash
-curl -i -X POST http://localhost:5000/login \
-  -d "username=*" \
-  -d "password=*"
+```text
+Username: *
+Password: *
 ```
 
 View the generated filters:
@@ -36,13 +34,13 @@ View the generated filters:
 docker logs ldap-app
 ```
 
-The injected values produce this filter:
+The bypass produces:
 
 ```text
 (&(uid=*)(userPassword=*))
 ```
 
-Both conditions become presence checks, so LDAP returns an existing user without verifying valid credentials. The application then authenticates the first returned entry.
+Both conditions become presence checks, so LDAP returns an existing user without verifying valid credentials. The application authenticates the first returned entry.
 
 ## Fix
 

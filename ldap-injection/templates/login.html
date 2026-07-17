@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Directory Login</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: system-ui, sans-serif;
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+        main {
+            width: min(90%, 360px);
+            padding: 32px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        h1 { margin: 0 0 8px; font-size: 1.5rem; }
+        p { margin: 0 0 24px; color: #6b7280; }
+        label { display: block; margin: 16px 0 6px; font-weight: 600; }
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #9ca3af;
+            border-radius: 6px;
+            font: inherit;
+        }
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 11px;
+            border: 0;
+            border-radius: 6px;
+            background: #2563eb;
+            color: #ffffff;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .result { margin: 20px 0 0; font-weight: 600; }
+        .success { color: #15803d; }
+        .error { color: #b91c1c; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Directory Login</h1>
+        <p>Sign in with your directory account.</p>
+
+        <form method="post" action="/login">
+            <label for="username">Username</label>
+            <input id="username" name="username" autocomplete="username" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+            <button type="submit">Sign in</button>
+        </form>
+
+        {% if message %}
+            <p class="result {{ 'success' if success else 'error' }}">{{ message }}</p>
+        {% endif %}
+    </main>
+</body>
+</html>
